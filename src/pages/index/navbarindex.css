@@ -1,0 +1,17 @@
+.lef-menu{
+    width: 15%;
+    display: flex;
+    flex-wrap: wrap;
+    flex: 1;
+    border-radius: 3px;
+    border: 2px solid #343a40; 
+}
+.userName{
+    margin-left: 10px !important;
+}
+nav{
+    width: 100%;
+}
+.userName{
+    margin-bottom: 1px solid #fff;
+}
