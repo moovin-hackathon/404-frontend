@@ -32,10 +32,10 @@ export default function Dashboard() {
         {pages.map(request => (
           <div key={request._id}>
         <div  className="areaImage" >
-        <Image src={request.image} rounded />
+        <Image src={`https://heatmap404.herokuapp.com/files/${request.image}`} rounded />
         </div>
         <div className="asaspps">
-        <Image className="imagePop" src={request.image} rounded />
+        <Image className="imagePop" src={`https://heatmap404.herokuapp.com/files/${request.image}`} rounded />
         </div>
         
         </div>        
