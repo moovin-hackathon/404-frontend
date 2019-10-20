@@ -9,7 +9,6 @@
 }
 .menuTop .container{
     width: 40%;
-
 }
 .nav-item .navMenuLink{
     color: #fff;
@@ -56,13 +55,23 @@
     width: 100%;
     height: 500px;
 }
+.screenShotArea .container .row >div{
+    width: 10%;
+}
+.areaImage img{
+    width: 100%;
+}
+.imageModal{
+    width: 100% !important;
+}
 .screenShotArea .row {
-    display: flex;
-    justify-content: space-between;
+    display: flex !important;
+    justify-content: space-between  !important;
     background-color: #fff;
     padding: 2%;
     border-radius: 6px;
     margin-top: 15%;
+    margin-bottom: 5%;
 }
 .prev, .next{
     position: absolute;    
