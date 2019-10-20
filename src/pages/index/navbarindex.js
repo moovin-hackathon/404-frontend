@@ -1,33 +1,41 @@
 import React, { Component } from 'react';
-import { Navbar } from 'react-bootstrap';
-import '../index/assets/navbarindex.css';
-import UserImg from '../index/assets/imgMasculino.jpeg';
+import { Nav, Image, Container, Row, Col  } from 'react-bootstrap';
+import '../index/assets/index.css';
+import UserImg from '../index/assets/imgMasculino2.jpeg';
+import api from '../../services/api';
 
 class NavBarIndex extends Component {
-    render(){    
+    render(){
+        async function handleClick(event) { 
+            const response = await api.get('/pages');
+            console.log(response.data);
+        }
         return(
-            <div className="lef-menu">
-                <Navbar bg="light">
-                    <Navbar.Brand href="#home">
-                        <img src={UserImg} width="30" height="30" className="d-inline-block align-top" alt="React Bootstrap logo"/>
-                        
-                        <Navbar.Brand className="userName" href="#home">André Cadoná</Navbar.Brand>
-                                        
-                    </Navbar.Brand>
-                </Navbar>                
-                <Navbar bg="dark">
-                    <Navbar.Brand href="#home">Index</Navbar.Brand>
-                </Navbar>
-                <Navbar bg="light">
-                    <Navbar.Brand href="#home">Config Api</Navbar.Brand>
-                </Navbar> 
-                <Navbar bg="dark">
-                    <Navbar.Brand href="#home">Dados do cliente</Navbar.Brand>
-                </Navbar>
-                <Navbar bg="light">
-                    <Navbar.Brand href="#home">Logout</Navbar.Brand>
-                </Navbar>           
-            </div>
+            <header className="geral">
+                <div className="menuTop">
+                    <Nav className="navMenu" activeKey="/home" >
+                        <Nav.Item>
+                            <Nav.Link className="navMenuLink" href="#home">Index</Nav.Link>
+                        </Nav.Item>
+                        <Nav.Item>
+                            <Nav.Link className="navMenuLink" eventKey="link-1">Conf. Api</Nav.Link>
+                        </Nav.Item>
+                        <Nav.Item>
+                            <Nav.Link  className="navMenuLink" eventKey="link-2">Conf. User</Nav.Link>
+                        </Nav.Item>                                            
+                    </Nav>
+                    <Container>
+                        <Row>                              
+                            <Col className="boxImg" xs={3} md={3}>
+                                <Image src={ UserImg } width="50" heigth="50" roundedCircle />                                
+                            </Col>
+                            <div className="userName">
+                                <Nav.Link className="navMenuLink"eventKey="link-2">André Cadoná</Nav.Link>                                
+                            </div>                          
+                        </Row>
+                    </Container>                                         
+                </div>               
+            </header>    
         );
     }
 }
