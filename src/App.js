@@ -1,13 +1,19 @@
 import React from 'react';
 import './App.css';
-import NavBarIndex from './pages/index/navbarindex';
-import ScrimShotArea from './pages/index/scrimshotarea.js';
+import NavBarIndex from './pages/Navbar/index';
+
+import Routes from './routes';
 
 function App() {
   return (
     <div className="App">
        <NavBarIndex /> 
-       <ScrimShotArea />
+       <div id="content">
+        <Routes />
+       </div>
+       
+       
+       
     </div>
   );
 }
